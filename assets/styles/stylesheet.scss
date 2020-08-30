@@ -1,0 +1,21 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Press Start 2P', 'monospace';
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+  padding-top: 20px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
