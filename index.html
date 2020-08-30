@@ -15,11 +15,31 @@
     </header>
 
     <p>Find us on Twitch</p>
-    <p>Find us on Youtube</p>
-    <p>Find us on Itch.io</p>
+    <div id="twitch-embed"></div>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "jeffanddom",
+      });
+    </script>
+
     <p>Find us on Twitter</p>
+    <a class="twitter-timeline" data-lang="en" data-width="600" data-height="400" data-theme="dark"
+      href="https://twitter.com/jeffanddom?ref_src=twsrc%5Etfw">Tweets by jeffanddom</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <p>Find us on Youtube</p>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/videoseries?list=PL2v4JaPz_wp9qYGsG1IWoOFnz1VY45Fg7" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <p>Find us on Itch.io</p>
     <p>Find us.</p>
   </div>
+
+
 </body>
 
 </html>
