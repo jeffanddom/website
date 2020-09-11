@@ -1,7 +1,9 @@
 body {
   background: black;
   color: white;
+  line-height: 1.5;
   font-family: 'Press Start 2P', 'monospace';
+  margin-bottom: 60px;
 }
 
 .container {
@@ -19,3 +21,75 @@ header {
   }
 }
 
+a {
+  color: rgb(113, 228, 19);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Content
+.about {
+  max-width: 600px;
+}
+
+// Twitch player
+.twitch-online, .twitch-offline {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.twitch-offline {
+  margin-top: 45px;
+  border-top: 1px solid rgb(113, 228, 19);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgb(113, 228, 19);
+  margin-bottom: 45px;
+  
+  .offline-label {
+    background: red;
+    padding: 10px;
+  }
+}
+
+// Past Broadcasts
+.past-broadcasts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.broadcast {
+  width: calc(33% - 26px); // 40px gutter split between 3 items
+  background: #444;
+  margin-bottom: 40px;
+  display: flex;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .thumbnail {
+    width: 100%;
+    padding-top: 56.25%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  p {
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+  }
+}

@@ -2,10 +2,8 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="assets/styles/stylesheet.scss">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  <script src="assets/javascript/app.ts"></script>
+  <link rel="stylesheet" href="assets/styles/stylesheet.scss">
 </head>
 
 <body>
@@ -14,32 +12,57 @@
       <img src="assets/images/header.png">
     </header>
 
-    <p>Find us on Twitch</p>
-    <div id="twitch-embed"></div>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "jeffanddom",
-      });
-    </script>
+    <div class="about">
+      <p>
+        Hi there!
+      </p>
+      <p>
+        We're two software engineers – each with over a decade of experience – and we're making a game from scratch!
+      </p>
+    </div>
 
-    <p>Find us on Twitter</p>
-    <a class="twitter-timeline" data-lang="en" data-width="600" data-height="400" data-theme="dark"
-      href="https://twitter.com/jeffanddom?ref_src=twsrc%5Etfw">Tweets by jeffanddom</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <p>Find us on Youtube</p>
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/videoseries?list=PL2v4JaPz_wp9qYGsG1IWoOFnz1VY45Fg7" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="twitch-online">
+      <p>Jeff and Dom are
+        <span class='live-label'>LIVE</span>
+      </p>
+      <div id="twitch-embed"></div>
+    </div>
 
-    <p>Find us on Itch.io</p>
-    <p>Find us.</p>
+    <div class="twitch-offline">
+      <p>
+        Jeff and Dom are: <span class='offline-label'>OFFLINE</span>
+      </p>
+
+      <p>We broadcast:</p>
+
+      <p>
+        - Tuesdays at 7pm<br>
+        - Fridays at 7pm
+      </p>
+    </div>
+
+    <div id="playlist"></div>
   </div>
 
+  <script src="assets/javascript/app.tsx"></script>
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+  <script type="text/javascript">
+    var options = {
+      width: "100%",
+      height: 400,
+      channel: "jeffanddom",
+    };
 
+    var player = new Twitch.Player("twitch-embed", options);
+    player.addEventListener(Twitch.Player.ONLINE, () => {
+      document.querySelectorAll('.twitch-online')[0].classList.add('visible')
+    })
+
+    player.addEventListener(Twitch.Player.OFFLINE, () => {
+      document.querySelectorAll('.twitch-offline')[0].classList.add('visible')
+    })
+  </script>
 </body>
 
 </html>
