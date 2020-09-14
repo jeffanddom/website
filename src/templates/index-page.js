@@ -12,7 +12,7 @@ export const IndexPageTemplate = ({
 }) => (
     <div id="index" className="container">
       <header>
-        <img src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
+        <img alt='Jeff and Dom Make a Game logo' src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
       </header>
       <div className="container">
         <p>{description}</p>
