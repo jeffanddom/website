@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import './all.sass'
+import './all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
@@ -14,6 +14,9 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Press+Start+2P&display=swap"
+          rel="stylesheet" />
 
         <link
           rel="apple-touch-icon"
@@ -38,7 +41,7 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#000" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
@@ -49,7 +52,9 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
+
       <div>{children}</div>
+
       <Footer />
     </div>
   )

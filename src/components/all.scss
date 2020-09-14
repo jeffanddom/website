@@ -1,0 +1,62 @@
+$green: rgb(113, 228, 19);
+$black: #000;
+$body-color: #ccc;
+
+$game-font: 'Press Start 2P', monospace;
+$text-font: 'Lato', sans-serif;
+
+body {
+  background-color: $black;
+  color: $body-color;
+  font-family: $text-font;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $game-font;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+a {
+  color: rgb(113, 228, 19);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Navigation
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  font-family: $game-font;
+
+  a {
+    padding: 20px 10px 10px;
+    border-bottom: 5px solid transparent;
+    margin-bottom: 10px;
+    
+
+    &:hover {
+      text-decoration: none;
+      border-bottom-color: $green;
+    }
+  }
+}
+
+// Index Page
+#index {
+  header {
+    text-align: center;
+    padding-top: 20px;
+  
+    img {
+      max-width: 100%;
+    }
+  }
+}
