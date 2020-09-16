@@ -27,10 +27,12 @@ class BroadcastList extends React.Component {
                     </Link>
                   </h3>
                 </p>
-                <p class="post-date">
+
+                <p className="post-date">
                   {post.frontmatter.date}
                 </p>
-                <p>
+
+                <p className="post-excerpt">
                   {post.excerpt}
                   <br />
                   <br />
