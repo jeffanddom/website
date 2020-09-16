@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
       <header>
         <img alt='Jeff and Dom Make a Game logo' src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
       </header>
-      <div className="container">
+      <div>
         <p>{description}</p>
 
         <div className="column is-12">
