@@ -18,21 +18,20 @@ export const BroadcastTemplate = ({
   return (
     <>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <h3>
-              Session {counter}
-            </h3>
+      <div className="broadcast container">
+        <h1>
+          {title}
+        </h1>
+        <h3>
+          Session {counter}
+        </h3>
 
-            <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} />
 
-            <PostContent content={content} />
-          </div>
+        <div className="youtube-wrapper">
+          <iframe className="youtube-embed" src={`https://www.youtube.com/embed/${videoId}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+
+        <PostContent content={content} />
       </div>
     </>
   )

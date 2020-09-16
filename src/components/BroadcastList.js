@@ -28,11 +28,13 @@ class BroadcastList extends React.Component {
                   </h3>
                 </p>
 
-                <p className="post-date">
-                  {post.frontmatter.date}
+                <p>
+                  <span class="post-date">
+                    {post.frontmatter.date}
+                  </span>
                 </p>
 
-                <p className="post-excerpt">
+                <p>
                   {post.excerpt}
                   <br />
                   <br />
@@ -43,7 +45,8 @@ class BroadcastList extends React.Component {
               </div>
 
             </article>
-          ))}
+          ))
+        }
       </div>
     )
   }
