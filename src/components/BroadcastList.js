@@ -12,7 +12,7 @@ class BroadcastList extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <article className="broadcast-preview" key={post.id}>
+            <article className="broadcast broadcast-preview" key={post.id}>
               <div className="thumbnail">
                 <img src={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
               </div>

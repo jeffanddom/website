@@ -1,4 +1,5 @@
 $green: rgb(113, 228, 19);
+$magenta: 'magenta';
 $black: #000;
 $body-color: #ccc;
 
@@ -19,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .container {
   margin: 0 auto;
-  max-width: 850px;
+  max-width: 800px;
   padding: 0 20px;
 }
 
@@ -102,6 +103,18 @@ nav .container {
 // Devlogs
 
 // Broadcasts
+.broadcast {
+  .post-title {
+    h1, h3 {
+      margin-top: 0;
+    }
+  }
+
+  .post-date {
+    color: #666;
+  }
+}
+
 .broadcast-preview {
   display: flex;
   align-items: flex-start;
@@ -111,17 +124,11 @@ nav .container {
     flex-shrink: 0;
     margin-right: 30px;
   }  
-  
-  h3 {
-    margin-top: 0;
-  }
-
-  .post-date {
-    color: #666;
-  }
 }
 
-.broadcast {
+.broadcast-full {
+  margin-top: 40px;
+
   .youtube-wrapper {
     position: relative;
     width: 100%;
@@ -135,6 +142,16 @@ nav .container {
       left: 0;
       width: 100%;
       height: 100%;
+    }
   }
+}
+
+.post-content {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.7;
+
+  li {
+    margin-bottom: 10px;
   }
 }

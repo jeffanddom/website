@@ -16,7 +16,7 @@ collections:
     label: "Devlog"
     folder: "src/pages/devlog"
     create: true
-    slug: "{{counter}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "devlog-post"}
       - {label: "Title", name: "title", widget: "string"}
@@ -31,7 +31,7 @@ collections:
     label: "Broadcast"
     folder: "src/pages/broadcasts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{counter}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "broadcast"}
       - {label: "Session Number", name: "counter", widget: "string"}
@@ -50,4 +50,4 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Description, name: description, widget: string}
+          - {label: Body, name: body, widget: "markdown"}
