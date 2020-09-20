@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BroadcastList extends React.Component {
+class BroadcastSquares extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -52,7 +52,7 @@ class BroadcastList extends React.Component {
   }
 }
 
-BroadcastList.propTypes = {
+BroadcastSquares.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -63,7 +63,7 @@ BroadcastList.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BroadcastListQuery {
+      query BroadcastSquaresQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "broadcast" } } }
@@ -87,6 +87,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BroadcastList data={data} count={count} />}
+    render={(data, count) => <BroadcastSquares data={data} count={count} />}
   />
 )

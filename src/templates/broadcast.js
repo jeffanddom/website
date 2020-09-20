@@ -32,7 +32,7 @@ export const BroadcastTemplate = ({
         </div>
 
         <p>
-          <span class="post-date">
+          <span className="post-date">
             {date}
           </span>
         </p>

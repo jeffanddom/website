@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import DevlogList from '../../components/DevlogList'
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -9,10 +9,10 @@ export default class BlogIndexPage extends React.Component {
       <Layout>
         <div className="container">
           <h1>
-            Latest Stories
+            Our Devlog
           </h1>
           <div className="content">
-            <BlogRoll />
+            <DevlogList />
           </div>
         </div>
       </Layout>

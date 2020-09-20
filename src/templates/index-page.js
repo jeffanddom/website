@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import { TwitchPlayer } from 'react-twitch-embed'
 
 import Layout from '../components/Layout'
-import BlogRoll from '../components/BlogRoll'
+import BroadcastSquares from '../components/BroadcastSquares'
+import DevlogList from '../components/DevlogList'
 import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
@@ -14,26 +16,50 @@ export const IndexPageTemplate = ({
 }) => {
   const HomeContent = contentComponent || Content
 
+  const setOnline = () => {
+    document.querySelectorAll('.twitch-online')[0].classList.add('visible')
+  }
+
+  const setOffline = () => {
+    document.querySelectorAll('.twitch-offline')[0].classList.add('visible')
+  }
+
   return <div id="index" className="container">
+
     <header>
       <img alt='Jeff and Dom Make a Game logo' alt={title} src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
     </header>
     <div>
       <HomeContent content={content} />
 
-      <div className="column is-12">
-        <h3 className="has-text-weight-semibold is-size-2">
-          Devlog
-          </h3>
+      <div className="twitch-online">
+        <p>Jeff and Dom are
+          <span className='live-label'>LIVE</span>
+        </p>
 
-        <BlogRoll />
-
-        <div className="column is-12 has-text-centered">
-          <Link className="btn" to="/broadcasts">
-            View all
-            </Link>
-        </div>
+        <TwitchPlayer channel='jeffanddom' onOffline={setOffline} onOnline={setOnline} />
       </div>
+
+      <div className="twitch-offline">
+        <p>
+          Jeff and Dom are: <span className='offline-label'>OFFLINE</span>
+        </p>
+
+        <p>We broadcast:</p>
+
+        <p>
+          - Tuesdays at 7pm<br />
+          - Fridays at 7pm
+        </p>
+      </div>
+
+
+
+      <h3>Recent Broadcasts</h3>
+      <BroadcastSquares />
+
+      <h3>Devlog</h3>
+      <DevlogList />
     </div>
   </div>
 }
@@ -72,15 +98,15 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: {templateKey: {eq: "index-page" } }) {
+      markdownRemark(frontmatter: {templateKey: {eq: "index-page" } }) {
       html
       frontmatter {
-        title
+      title
         image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+      childImageSharp {
+      fluid(maxWidth: 2048, quality: 100) {
+      ...GatsbyImageSharpFluid
+    }
           }
         }
       }
