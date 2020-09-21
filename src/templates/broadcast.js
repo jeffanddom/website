@@ -28,7 +28,7 @@ export const BroadcastTemplate = ({
         </p>
 
         <div className="youtube-wrapper">
-          <iframe className="youtube-embed" src={`https://www.youtube.com/embed/${videoId}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title={title} className="youtube-embed" src={`https://www.youtube.com/embed/${videoId}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <p>

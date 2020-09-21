@@ -13,7 +13,7 @@ const Footer = class extends React.Component {
             </p>
 
             <div className="social">
-              <a title="twitter" href="https://twitter.com/jeffanddom">
+              <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank">
                 <img
                   src={twitter}
                   alt="Twitter"
@@ -24,14 +24,14 @@ const Footer = class extends React.Component {
           </div>
 
           <div className="cc">
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <a rel="license" target="_blank" href=" http://creativecommons.org/licenses/by-sa/4.0/">
               <img alt="Creative Commons License" style={{ borderWidth: 0 }} src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
             </a>
             <div>
-              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              This work is licensed under a <a target="_blank" rel=" license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </div>
           </div>
-        </div>
+        </div >
       </footer >
     )
   }

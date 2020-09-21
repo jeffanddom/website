@@ -27,7 +27,7 @@ export const IndexPageTemplate = ({
   return <div id="index" className="container">
 
     <header>
-      <img alt='Jeff and Dom Make a Game logo' alt={title} src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
+      <img alt='Jeff and Dom Make a Game' src={`${!!image.childImageSharp ? image.childImageSharp.fluid.src : image}`} />
     </header>
     <div>
       <HomeContent content={content} />
@@ -42,15 +42,15 @@ export const IndexPageTemplate = ({
 
       <div className="twitch-offline">
         <p>
-          Jeff and Dom are: <span className='offline-label'>OFFLINE</span>
+          Jeff and Dom are <span className='offline-label'>OFFLINE</span>
         </p>
 
-        <p>We broadcast:</p>
+        <p>We broadcast on:</p>
 
-        <p>
-          - Tuesdays at 7pm<br />
-          - Fridays at 7pm
-        </p>
+        <ul>
+          <li>Tuesdays at <span>7pm</span></li>
+          <li>Fridays at <span>7pm</span></li>
+        </ul>
       </div>
 
 

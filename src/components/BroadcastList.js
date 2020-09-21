@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BroadcastList extends React.Component {
   render() {
@@ -14,7 +13,7 @@ class BroadcastList extends React.Component {
           posts.map(({ node: post }) => (
             <article className="broadcast broadcast-preview" key={post.id}>
               <div className="thumbnail">
-                <img src={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
+                <img alt='' src={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
               </div>
               <div>
                 <div className="post-title">

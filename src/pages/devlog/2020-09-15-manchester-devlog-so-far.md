@@ -1,16 +1,16 @@
 ---
-templateKey: 'devlog-post'
-title: 'Our progress so far: 35 streams in!'
+templateKey: devlog-post
+title: "Our progress so far: 35 streams in!"
 date: 2020-09-15T15:04:10.000Z
+description: As we make some serious progress, we wanted to pause and make a
+  record of our development so far.
 featuredpost: true
 featuredimage: /img/netplay-diagram.jpg
-description: >-
-  As we make some serious progress, we wanted to pause and make a record of our development so far.
 tags:
   - devlog
 ---
 
-![netplay diargam](/img/netplay-diagram.jpg)
+![](/img/netplay-diagram.jpg)
 
 # Intro 
 

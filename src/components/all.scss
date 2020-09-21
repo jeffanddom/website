@@ -10,6 +10,7 @@ body {
   background-color: $black;
   color: $body-color;
   font-family: $text-font;
+  font-size: 18px;
   margin: 0;
   line-height: 1.5;
 }
@@ -25,7 +26,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a {
-  color: rgb(113, 228, 19);
+  color: $green;
   text-decoration: none;
 
   &:hover {
@@ -103,6 +104,7 @@ nav .container {
 // Twitch player
 .twitch-online, .twitch-offline {
   display: none;
+  font-family: $game-font;
 
   &.visible {
     display: block;
@@ -111,18 +113,27 @@ nav .container {
 
 .twitch-offline {
   margin-top: 45px;
-  border-top: 1px solid $green;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid $green;
+  border-top: 1px solid #666;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #666;
   margin-bottom: 45px;
   
   .offline-label {
     background: red;
     padding: 10px;
   }
+
+  li {
+    margin-bottom: 8px;
+
+    span {
+      color: $green;
+    }
+  }
 }
 
+// Preview list
 
 // Devlogs
 
@@ -170,6 +181,56 @@ nav .container {
   }
 }
 
+.broadcast-square-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.broadcast-square {
+  width: calc(33% - 4px); // 40px gutter split between 3 items
+  margin-bottom: 40px;
+  display: flex;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    background: #222;
+    &:hover {
+      background: #333;
+      text-decoration: none;
+    }
+  }
+
+  .thumbnail {
+    width: 100%;
+    padding-top: 56.25%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+
+    h3 { 
+      margin: 0; 
+      font-size: 14px; 
+      padding-bottom: 10px;
+    }
+
+    .metadata {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+////
 .post-content {
   max-width: 600px;
   font-size: 18px;

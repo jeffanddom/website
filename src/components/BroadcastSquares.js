@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BroadcastSquares extends React.Component {
   render() {
@@ -9,40 +8,26 @@ class BroadcastSquares extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
+      <div className="broadcast-square-wrapper">
         {posts &&
           posts.map(({ node: post }) => (
-            <article className="broadcast broadcast-preview" key={post.id}>
-              <div className="thumbnail">
-                <img src={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
-              </div>
-              <div>
-                <div className="post-title">
-                  Session {post.frontmatter.counter}<br />
+            <article className="broadcast-square" key={post.id}>
+              <Link
+                to={post.fields.slug}
+              >
+
+                <div className='thumbnail' style={{ backgroundImage: `url(https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg)` }} />
+                <div className='content'>
                   <h3>
-                    <Link
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
+                    {post.frontmatter.title}
                   </h3>
+
+                  <div className='metadata'>
+                    <span>{post.frontmatter.date}</span>
+                    <span>Session {post.frontmatter.counter}</span>
+                  </div>
                 </div>
-
-                <p>
-                  <span className="post-date">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
-
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
+              </Link>
 
             </article>
           ))
@@ -66,6 +51,7 @@ export default () => (
       query BroadcastSquaresQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 3
           filter: { frontmatter: { templateKey: { eq: "broadcast" } } }
         ) {
           edges {
@@ -78,7 +64,7 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "M/D/YY")
                 videoId
                 counter
               }
