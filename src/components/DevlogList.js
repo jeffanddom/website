@@ -12,41 +12,36 @@ class DevlogList extends React.Component {
       <div>
         {posts &&
           posts.map(({ node: post }) => (
-            <article key={post.id}
-              className='blog-list-item preview-list-item'
-            >
-              <header>
-                {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      }}
-                    />
-                  </div>
-                ) : null}
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
+            <article key={post.id} className='preview-list-item'>
+              <div className="thumbnail">
+                <PreviewCompatibleImage
+                  imageInfo={{
+                    image: post.frontmatter.featuredimage,
+                    alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                  }}
+                />
+              </div>
+              <div className='post-title'>
+                <h3>
+                  <Link to={post.fields.slug}>
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
+                </h3>
+                <p>
+                  <span className="post-date">
                     {post.frontmatter.date}
                   </span>
                 </p>
-              </header>
-              <p>
-                {post.frontmatter.description}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
+                <p>
+                  {post.frontmatter.description}
+                  <br />
+                  <br />
+                  <Link className="button" to={post.fields.slug}>
+                    Keep Reading →
                   </Link>
-              </p>
+                </p>
+
+              </div>
             </article>
           ))}
       </div>
@@ -72,7 +67,6 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
               fields {
                 slug

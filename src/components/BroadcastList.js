@@ -8,10 +8,10 @@ class BroadcastList extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
+      <div>
         {posts &&
           posts.map(({ node: post }) => (
-            <article className="broadcast broadcast-preview" key={post.id}>
+            <article className="broadcast broadcast-preview preview-list-item" key={post.id}>
               <div className="thumbnail">
                 <img alt='' src={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
               </div>
@@ -19,9 +19,7 @@ class BroadcastList extends React.Component {
                 <div className="post-title">
                   Session {post.frontmatter.counter}<br />
                   <h3>
-                    <Link
-                      to={post.fields.slug}
-                    >
+                    <Link to={post.fields.slug}>
                       {post.frontmatter.title}
                     </Link>
                   </h3>
@@ -38,7 +36,7 @@ class BroadcastList extends React.Component {
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                    See more →
                   </Link>
                 </p>
               </div>
