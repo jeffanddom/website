@@ -14,11 +14,8 @@ class DevlogList extends React.Component {
           posts.map(({ node: post }) => (
             <article key={post.id} className='preview-list-item'>
               <div className="thumbnail">
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: post.frontmatter.featuredimage,
-                    alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                  }}
+                <img src={post.frontmatter.featuredimage}
+                  alt={`featured image thumbnail for post ${post.frontmatter.title}`}
                 />
               </div>
               <div className='post-title'>
@@ -76,13 +73,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 description
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                featuredimage
               }
             }
           }
