@@ -45,18 +45,20 @@ export const IndexPageTemplate = ({
           Jeff and Dom are <span className='offline-label'>OFFLINE</span>
         </p>
 
-        <p>We broadcast on:</p>
+        <p>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</p>
 
         <ul>
           <li>Tuesdays at <span>7pm</span></li>
           <li>Fridays at <span>7pm</span></li>
         </ul>
+
+        <p>All times Pacific.</p>
       </div>
-
-
 
       <h3>Recent Broadcasts</h3>
       <BroadcastSquares />
+
+      <p>See the <a href='./broadcasts'>full archive</a>.</p>
 
       <h3>Devlog</h3>
       <DevlogList />
