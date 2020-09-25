@@ -2,15 +2,24 @@
 templateKey: devlog-post
 title: Devlog 1 - September 2020
 date: 2020-09-15T15:04:10.000Z
-description: Hey there, friend! Welcome to the Jeff and Dom Make a Game (heretofore JADMAG) devlog. Before you hit a big wall of prose, check out our new trailer!
+description: |
+  Hey there, friend! Welcome to the Jeff and Dom Make a Game (heretofore JADMAG) devlog. Before you hit a big wall of prose, check out our new trailer!
+
+  <div class="youtube-wrapper">
+    <iframe src="https://www.youtube.com/embed/P5_FmXrgzGI" class="youtube-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 featuredimage: https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1600918628935_Screen+Shot+2020-09-23+at+8.34.55+PM.png
 tags:
-  - devlog
+  - manchester
+  - breakout
+  - multiplayer
 ---
+
+Hey there, friend! Welcome to the Jeff and Dom Make a Game (heretofore JADMAG) devlog. Before you hit a big wall of prose, check out our new trailer!
 
 <div class="youtube-wrapper">
   <iframe src="https://www.youtube.com/embed/P5_FmXrgzGI" class="youtube-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+</div>  
 
 The funny thing about maintaining a devlog for this project is that most devlogs are meant giving the audience a peek into the development process that they otherwise might not get to experience. Nearly 40 stream sessions in, it’s clear that JADMAG has been about nothing if not the process itself, warts and all. Scrub over to any moment in our archive, and you’ll find us banging our foreheads against some granular detail, usually a programming bug, but maybe also a trivial decision like deciding what color to use for the circles that pass as the game’s trees. If we had any goal at all when we started the stream, it was to demystify the process of making a game, certainly for ourselves, but mostly for other folks.
 

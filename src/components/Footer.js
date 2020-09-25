@@ -1,5 +1,7 @@
 import React from 'react'
 
+import github from '../img/github.svg'
+import twitch from '../img/twitch.svg'
 import twitter from '../img/social/twitter.svg'
 
 const Footer = class extends React.Component {
@@ -13,10 +15,26 @@ const Footer = class extends React.Component {
             </p>
 
             <div className="social">
+              <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank">
+                <img
+                  src={twitch}
+                  alt="Twitch"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+              {' '}
               <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank">
                 <img
                   src={twitter}
                   alt="Twitter"
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+              {' '}
+              <a title="github" href="https://github.com/jeffanddom" target="_blank">
+                <img
+                  src={github}
+                  alt="GitHub"
                   style={{ width: '1em', height: '1em' }}
                 />
               </a>
