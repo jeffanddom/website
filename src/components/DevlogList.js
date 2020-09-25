@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { HTMLContent } from './Content'
 
 class DevlogList extends React.Component {
   render() {
@@ -30,7 +31,7 @@ class DevlogList extends React.Component {
                   </span>
                 </p>
                 <p>
-                  {post.frontmatter.description}
+                  <HTMLContent content={post.frontmatter.description} />
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>

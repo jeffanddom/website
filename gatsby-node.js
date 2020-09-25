@@ -1,5 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
+const remark = require("remark")
+const remarkHTML = require("remark-html")
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
@@ -83,5 +85,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+  }
+
+  if (node.frontmatter && node.frontmatter.description) {
+    node.frontmatter.description = remark()
+      .use(remarkHTML)
+      .processSync(node.frontmatter.description)
+      .toString();
   }
 }

@@ -9,7 +9,6 @@ import Content, { HTMLContent } from '../components/Content'
 export const DevlogTemplate = ({
   content,
   contentComponent,
-  description,
   tags,
   title,
   helmet,
@@ -25,8 +24,6 @@ export const DevlogTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-
-            <p>{description}</p>
 
             <PostContent content={content} />
 
