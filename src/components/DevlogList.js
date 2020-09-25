@@ -30,7 +30,7 @@ class DevlogList extends React.Component {
                   </span>
                 </p>
                 <p>
-                  <HTMLContent content={post.frontmatter.description} />
+                  <HTMLContent content={post.frontmatter.excerpt} />
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
@@ -73,6 +73,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 description
+                excerpt
                 featuredimage
               }
             }

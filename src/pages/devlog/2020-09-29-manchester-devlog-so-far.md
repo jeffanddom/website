@@ -1,8 +1,9 @@
 ---
 templateKey: devlog-post
 title: Devlog 1 - September 2020
-date: 2020-09-15T15:04:10.000Z
-description: |
+date: 2020-09-29T17:00:00.000Z
+description: Our first devlog entry! We've got a new trailer for our Twitch stream (https://jeffanddom.com/trailer), and a quick overview of where we've been and where we're going next.
+excerpt: |
   Hey there, friend! Welcome to the Jeff and Dom Make a Game (heretofore JADMAG) devlog. Before you hit a big wall of prose, check out our new trailer!
 
   <div class="youtube-wrapper">
@@ -71,4 +72,3 @@ A solid multiplayer implementation and a strong visual aesthetic should form a p
 
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1600920596136_d6d.jpg)
-

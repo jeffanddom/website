@@ -87,10 +87,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 
-  if (node.frontmatter && node.frontmatter.description) {
-    node.frontmatter.description = remark()
+  if (node.frontmatter && node.frontmatter.excerpt) {
+    node.frontmatter.excerpt = remark()
       .use(remarkHTML)
-      .processSync(node.frontmatter.description)
+      .processSync(node.frontmatter.excerpt)
       .toString();
   }
 }
