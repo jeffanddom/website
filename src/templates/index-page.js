@@ -48,8 +48,8 @@ export const IndexPageTemplate = ({
         <p>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</p>
 
         <ul>
-          <li>Tuesdays at <span>7pm</span></li>
-          <li>Fridays at <span>7pm</span></li>
+          <li>Mondays at <span>7pm</span></li>
+          <li>Thursdays at <span>7pm</span></li>
         </ul>
 
         <p>All times Pacific.</p>
