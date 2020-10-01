@@ -9,6 +9,14 @@ $text-font: 'Lato', sans-serif;
 $border: 1px solid #666;
 $border-padding: 35px;
 
+@mixin mobile {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 600px) { @content; }
+}
+
 body {
   background-color: $black;
   color: $body-color;
@@ -16,10 +24,26 @@ body {
   font-size: 18px;
   margin: 0;
   line-height: 1.5;
+
+  @include mobile {
+    font-size: 16px;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: $game-font;
+}
+
+@include mobile {
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
 }
 
 .container {
@@ -46,8 +70,10 @@ img {
 }
 
 .thumbnail {
-  width: 180px;
-  flex-shrink: 0;
+  @include desktop {
+    width: 180px;
+    flex-shrink: 0;
+  }
 
   img {
     width: 100%;
@@ -60,7 +86,9 @@ footer {
   padding: 40px 0;
 
   .container {
-    display: flex;
+    @include desktop {
+      display: flex;
+    }
   }
 
   .cc {
@@ -74,6 +102,7 @@ footer {
   
   .social {
     padding-right: 30px;
+    margin-bottom: 30px;
   }
   .social-icons {
     cursor: pointer;
@@ -90,19 +119,31 @@ footer {
 
 // Navigation
 nav .container {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 30px;
   font-family: $game-font;
+  
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+  }
 
   a {
-    padding: 20px 0 10px;
+    display: block;
     border-bottom: 5px solid transparent;
     margin-bottom: 10px;
+
+    @include desktop {
+      padding: 20px 0 10px;
+    }
     
 
     &:hover {
-      text-decoration: none;
-      border-bottom-color: $green;
+      text-decoration: underline;
+
+      @include desktop {
+        text-decoration: none;
+        border-bottom-color: $green;
+      }
     }
   }
 }
@@ -145,6 +186,10 @@ nav .container {
   margin-bottom: $border-padding;
   
   .offline-label {
+    @include mobile {
+      display: block;
+      margin-top: 10px;
+    }
     background: red;
     padding: 10px;
   }
@@ -164,8 +209,10 @@ nav .container {
 
 // Preview list
 .preview-list-item {
-  display: flex;
-  align-items: flex-start;
+  @include desktop {
+    display: flex;
+    align-items: flex-start;
+  }
   margin-bottom: 60px;
 
   .thumbnail {
@@ -226,12 +273,17 @@ nav .container {
 }
 
 .broadcast-square {
-  width: calc(33% - 4px); // 40px gutter split between 3 items
+  width: 100%;
+  @include desktop() {
+    width: calc(33% - 4px); // 6px gutter split between 3 items
+  }
+
   margin-bottom: 40px;
   display: flex;
 
   a {
     display: flex;
+    width: 100%;
     flex-direction: column;
     background: #222;
     &:hover {
@@ -273,6 +325,7 @@ nav .container {
   max-width: 600px;
   font-size: 18px;
   line-height: 1.7;
+  word-wrap: break-word;
 
   li {
     margin-bottom: 10px;
@@ -291,7 +344,10 @@ nav .container {
 
     li {
       list-style-type: none;
-      font-size: 30px;
+      font-size: 20px;
+      @include desktop {
+        font-size: 30px;
+      }
       margin-bottom: 16px;
     }
   }

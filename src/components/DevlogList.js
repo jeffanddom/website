@@ -13,11 +13,6 @@ class DevlogList extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <article key={post.id} className='preview-list-item'>
-              <div className="thumbnail">
-                <img src={post.frontmatter.featuredimage}
-                  alt={`featured image thumbnail for post ${post.frontmatter.title}`}
-                />
-              </div>
               <div className='post-title'>
                 <h3>
                   <Link to={post.fields.slug}>
@@ -29,14 +24,12 @@ class DevlogList extends React.Component {
                     {post.frontmatter.date}
                   </span>
                 </p>
-                <p>
+                <div>
                   <HTMLContent content={post.frontmatter.excerpt} />
-                  <br />
-                  <br />
                   <Link className="button" to={post.fields.slug}>
                     Keep Reading →
                   </Link>
-                </p>
+                </div>
 
               </div>
             </article>

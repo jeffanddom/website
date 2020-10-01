@@ -15,22 +15,22 @@ const Index = () => {
 
           <ul className="social">
             <li>
-              <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank">
+              <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank" rel="noreferrer">
                 <FaTwitch /> Twitch
               </a>
             </li>
             <li>
-              <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank">
+              <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank" rel="noreferrer">
                 <FaTwitter /> @jeffanddom
               </a>
             </li>
             <li>
-              <a title="github" href="https://github.com/jeffanddom" target="_blank">
+              <a title="github" href="https://github.com/jeffanddom" target="_blank" rel="noreferrer">
                 <FaGithub /> jeffanddom
               </a>
             </li>
             <li>
-              <a title="youtube" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank">
+              <a title="youtube" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank" rel="noreferrer">
                 <FaYoutube /> YouTube
               </a>
             </li>

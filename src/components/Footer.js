@@ -12,30 +12,30 @@ const Footer = class extends React.Component {
             </p>
 
             <div className="social-icons">
-              <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank">
+              <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank" rel="noreferrer">
                 <FaTwitch />
               </a>
               {' '}
-              <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank">
+              <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank" rel="noreferrer">
                 <FaTwitter />
               </a>
               {' '}
-              <a title="github" href="https://github.com/jeffanddom" target="_blank">
+              <a title="github" href="https://github.com/jeffanddom" target="_blank" rel="noreferrer">
                 <FaGithub />
               </a>
               {' '}
-              <a title="github" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank">
+              <a title="github" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank" rel="noreferrer">
                 <FaYoutube />
               </a>
             </div>
           </div>
 
           <div className="cc">
-            <a rel="license" target="_blank" href=" http://creativecommons.org/licenses/by-sa/4.0/">
+            <a target="_blank" href=" http://creativecommons.org/licenses/by-sa/4.0/" rel="noreferrer">
               <img alt="Creative Commons License" style={{ borderWidth: 0 }} src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
             </a>
             <div>
-              This work is licensed under a <a target="_blank" rel=" license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+              This work is licensed under a <a target="_blank" rel="noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </div>
           </div>
         </div >
