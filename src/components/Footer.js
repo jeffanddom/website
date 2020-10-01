@@ -1,42 +1,31 @@
 import React from 'react'
-
-import github from '../img/github.svg'
-import twitch from '../img/twitch.svg'
-import twitter from '../img/social/twitter.svg'
+import { FaTwitch, FaTwitter, FaGithub, FaYoutube } from 'react-icons/fa'
 
 const Footer = class extends React.Component {
   render() {
     return (
       <footer>
         <div className="container">
-          <div>
+          <div className='social'>
             <p>
               Made by Jeff&nbsp;Lee and Dominic&nbsp;Dagradi
             </p>
 
-            <div className="social">
+            <div className="social-icons">
               <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank">
-                <img
-                  src={twitch}
-                  alt="Twitch"
-                  style={{ width: '1em', height: '1em' }}
-                />
+                <FaTwitch />
               </a>
               {' '}
               <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank">
-                <img
-                  src={twitter}
-                  alt="Twitter"
-                  style={{ width: '1em', height: '1em' }}
-                />
+                <FaTwitter />
               </a>
               {' '}
               <a title="github" href="https://github.com/jeffanddom" target="_blank">
-                <img
-                  src={github}
-                  alt="GitHub"
-                  style={{ width: '1em', height: '1em' }}
-                />
+                <FaGithub />
+              </a>
+              {' '}
+              <a title="github" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank">
+                <FaYoutube />
               </a>
             </div>
           </div>

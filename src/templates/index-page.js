@@ -10,7 +10,7 @@ import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
   image,
-  title,
+  twitchEmbed,
   content,
   contentComponent
 }) => {
@@ -33,34 +33,34 @@ export const IndexPageTemplate = ({
       <HomeContent content={content} />
 
       <div className="twitch-online">
-        <p>Jeff and Dom are
+        <h4>Jeff and Dom are
           <span className='live-label'>LIVE</span>
-        </p>
+        </h4>
 
-        <TwitchPlayer channel='jeffanddom' onOffline={setOffline} onOnline={setOnline} />
+        {twitchEmbed && <TwitchPlayer channel='jeffanddom' onOffline={setOffline} onOnline={setOnline} />}
       </div>
 
       <div className="twitch-offline">
-        <p>
+        <h4>
           Jeff and Dom are <span className='offline-label'>OFFLINE</span>
-        </p>
+        </h4>
 
-        <p>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</p>
+        <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</span>
 
         <ul>
           <li>Mondays at <span>7pm</span></li>
           <li>Thursdays at <span>7pm</span></li>
         </ul>
 
-        <p>All times Pacific.</p>
+        <span>All times Pacific.</span>
       </div>
 
       <h3>Recent Broadcasts</h3>
       <BroadcastSquares />
 
-      <p>See the <a href='./broadcasts'>full archive</a>.</p>
+      <p>See the <a href='/broadcasts'>full archive</a>.</p>
 
-      <h3>Devlog</h3>
+      <h3 className="devlog-header">Devlog</h3>
       <DevlogList />
     </div>
   </div>
@@ -68,7 +68,6 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
 }
@@ -80,7 +79,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        title={frontmatter.title}
+        twitchEmbed={true}
         content={html}
         contentComponent={HTMLContent}
       />

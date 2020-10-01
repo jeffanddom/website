@@ -11,7 +11,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetFor }) => {
     return (
       <IndexPageTemplate
         image={getAsset(data.image)}
-        title={data.title}
+        twitchEmbed={false}
         content={widgetFor('body')}
       />
     )

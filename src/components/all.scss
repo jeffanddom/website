@@ -6,6 +6,9 @@ $body-color: #ccc;
 $game-font: 'Press Start 2P', monospace;
 $text-font: 'Lato', sans-serif;
 
+$border: 1px solid #666;
+$border-padding: 35px;
+
 body {
   background-color: $black;
   color: $body-color;
@@ -68,6 +71,21 @@ footer {
       margin-right: 20px;
     }
   }
+  
+  .social {
+    padding-right: 30px;
+  }
+  .social-icons {
+    cursor: pointer;
+    font-size: 24px;
+    a { 
+      padding-right: 8px; 
+      color: white;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
 }
 
 // Navigation
@@ -77,7 +95,7 @@ nav .container {
   font-family: $game-font;
 
   a {
-    padding: 20px 10px 10px;
+    padding: 20px 0 10px;
     border-bottom: 5px solid transparent;
     margin-bottom: 10px;
     
@@ -99,12 +117,21 @@ nav .container {
       max-width: 100%;
     }
   }
+
+  .devlog-header {
+    margin-top: $border-padding;
+    border-top: $border;
+    padding-top: $border-padding;
+  }
 }
 
 // Twitch player
 .twitch-online, .twitch-offline {
   display: none;
-  font-family: $game-font;
+
+  h4 {
+    margin-top: 0;
+  }
 
   &.visible {
     display: block;
@@ -112,20 +139,22 @@ nav .container {
 }
 
 .twitch-offline {
-  margin-top: 45px;
-  border-top: 1px solid #666;
-  padding-top: 35px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #666;
-  margin-bottom: 45px;
+  margin-top: $border-padding;
+  border: $border;
+  padding: $border-padding;
+  margin-bottom: $border-padding;
   
   .offline-label {
     background: red;
     padding: 10px;
   }
 
+  ul {
+    margin: 8px 0;
+  }
+
   li {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
     span {
       color: $green;
@@ -247,5 +276,23 @@ nav .container {
 
   li {
     margin-bottom: 10px;
+  }
+}
+
+// Social
+#find-us {
+  ul.social {
+    font-family: $game-font;
+    padding: 0;
+    margin: 0;
+    padding-top: 30px;
+    border-top: $border;
+    margin-top: 30px;
+
+    li {
+      list-style-type: none;
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
   }
 }
