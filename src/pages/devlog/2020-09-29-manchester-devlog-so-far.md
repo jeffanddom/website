@@ -38,7 +38,7 @@ Early on, we worked on Breakout. This is a classic starting point for game devel
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1600919321908_Screen+Shot+2020-09-23+at+8.48.26+PM.png)
 
-If we were going to spend months agonizing over minutiae, we wanted to do that for a game that had a bit more mechanical depth than Breakout. So, we thought, why not try our hand in making a Bolo clone?
+If we were going to spend months agonizing over minutiae, we wanted to do that for a game that had a bit more mechanical depth than Breakout. So, we thought, why not try our hand in making a [Bolo](https://en.wikipedia.org/wiki/Bolo_(1987_video_game)) clone?
 
 Bolo was a multiplayer Mac game from the late 80s. Playing it on a modern computer is a minor technical odyssey involving a 68k emulator and a bootleg OS image. The game gave you a tiny tank to drive around, and you shot at other human- or AI-operated tanks. The handling was slippery and the graphics were primitive, even for the era. But this belied its unusually deep and engaging gameplay.
 
@@ -64,11 +64,11 @@ That we’ve gotten so much done, in a relatively small number of hours, can be 
 
 For the short-term, we’ll be focusing on multiplayer. Multiplayer is notoriously difficult to implement, and it’s definitely been the most challenging thing we’ve worked on. The conventional wisdom is that your multiplayer architecture dictates the architecture for the rest of the game, which means the later you wait to add it, the harder it gets to add. On the plus side, we’ve started early! On the minus side, it means that the stream will continue to be a little one-note. Multiplayer implementation is interesting in a lot of ways, but it’s not always that interesting to watch.
 
-After that, we’re thinking of another major overhaul. Manchester’s graphics are primitive shapes powered by the Canvas 2D API. The simplistic visuals have their charms, but we’ve always considered them to be for prototyping only. Eventually, we’d like to adopt a 3D wireframe aesthetic, not unlike Battlezone, another classic tank game from the 80s.
+After that, we’re thinking of another major overhaul. Manchester’s graphics are primitive shapes powered by the [Canvas 2D API](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D). The simplistic visuals have their charms, but we’ve always considered them to be for prototyping only. Eventually, we’d like to adopt a 3D wireframe aesthetic, not unlike Battlezone, another classic tank game from the 80s.
 
-![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1600920397561_whnP9emhvSVErHXYhXyT4tSnsAysUg0sITeKEGNJMnk.webp)
+![](https://uc7eac35ea1a9a924a9ef065ae06.previews.dropboxusercontent.com/p/thumb/AA-62n2kPUIEqXGtVrB93qsRcpBAwv6m0ExnMEah2iqgru_ikNkiw0tOqhsdR6MQiebVldnzXWETaBmy6iul8r24YDUUloeK9wXQpwGk0IEYSoODN8ToA-dIyxcHTIarT8WriuYUkaDWG6Zf_KVKOCoX7nktYexn-qA73bgNLdMF-3P7JeiU2ByiPPbx2y_iBoSKvonZZKyk181Ov4wH_aEPaZYqWYLjcKb4pxKBWEwaH1FXS6c7o81X0_fTAVEa5cnu5FbYmmS_dbxaDH9DrLGLIWRJe40asRTwoTu8btUQScGEbzjhfMQ3H9UjyS2EZg10Fu14hpqQu3R0xzkr2xBfCBvceY_OyxNZFN2Td7LXxOAKE8qVUNRSSZDpJI21K23VF_9UDEL376SgILx4MFb6Xj30cwLjn_SMiRxpE9SnPkfnA7-1hLLKebbsrLpN250/p.jpeg)
+
 
 A solid multiplayer implementation and a strong visual aesthetic should form a pretty solid foundation to build an actual game, not unlike the first two circles that make up a drawing of an owl. After that, it’s a simple matter of building an actual game out of it!
-
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1600920596136_d6d.jpg)
