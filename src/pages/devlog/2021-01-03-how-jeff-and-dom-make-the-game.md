@@ -6,7 +6,7 @@ description: An overview of some of the tools we use to build the game.
 excerpt: |
   Holy heck, it’s January! Congrats to everyone for making it to 2021. This post is about some of the tools we use to build and develop the game.
 
-  ![](/devlog/20210104-autoreload.gif)
+  ![](/img/devlog/20210104-autoreload.gif)
 tags:
   - manchester
   - tools
