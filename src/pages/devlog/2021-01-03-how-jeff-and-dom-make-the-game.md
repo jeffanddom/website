@@ -1,6 +1,6 @@
 ---
 templateKey: devlog-post
-title: Devlog 2 - How Jeff and Dom make the game
+title: How Jeff and Dom make the game
 date: 2021-01-04T17:00:00.000Z
 description: An overview of some of the tools we use to build the game.
 excerpt: |
