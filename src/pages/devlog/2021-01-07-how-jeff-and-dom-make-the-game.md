@@ -1,7 +1,7 @@
 ---
 templateKey: devlog-post
 title: How Jeff and Dom make the game
-date: 2021-01-04T17:00:00.000Z
+date: 2021-01-07T17:00:00.000Z
 description: An overview of some of the tools we use to build the game.
 excerpt: |
   As a multiplayer game, [Manchester](https://github.com/jeffanddom/manchester) has to run both in-browser and server-side. This post explores how we convert TypeScript into runnable programs for both environments, how we automate builds and reloads for a better developer experience, and some tricks we've discovered for improving build performance, like using [esbuild](https://esbuild.github.io/) and moving builds into the cloud.
