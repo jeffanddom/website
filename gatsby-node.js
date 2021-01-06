@@ -2,6 +2,7 @@ const _ = require('lodash')
 const path = require('path')
 const remark = require("remark")
 const remarkHTML = require("remark-html")
+const remarkSmartypants = require("@silvenon/remark-smartypants")
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
@@ -90,6 +91,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.frontmatter && node.frontmatter.excerpt) {
     node.frontmatter.excerpt = remark()
       .use(remarkHTML)
+      .use(remarkSmartypants)
       .processSync(node.frontmatter.excerpt)
       .toString();
   }
