@@ -4,7 +4,7 @@ title: How Jeff and Dom make the game
 date: 2021-01-04T17:00:00.000Z
 description: An overview of some of the tools we use to build the game.
 excerpt: |
-  As a multiplayer game, Manchester has to run both in-browser and server-side. This post explores how we convert TypeScript into runnable programs for both environments, how we automate builds and reloads for a better developer experience, and some tricks we've discovered for improving build performance, like using esbuild and moving builds into the cloud.
+  As a multiplayer game, [Manchester](https://github.com/jeffanddom/manchester) has to run both in-browser and server-side. This post explores how we convert TypeScript into runnable programs for both environments, how we automate builds and reloads for a better developer experience, and some tricks we've discovered for improving build performance, like using [esbuild](https://esbuild.github.io/) and moving builds into the cloud.
 
   ![](/img/devlog/20210104-autoreload.gif)
 tags:
@@ -17,11 +17,11 @@ Holy heck, it's January! Congrats to everyone for making it to 2021.
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1609724615677_Screen+Shot+2021-01-03+at+5.43.00+PM.png)
 
-Manchester (the working title for our current project) is still more tech demo than game, but it's come a really long way in the past six months. We've arrived at a multiplayer architecture that seems pretty workable, and for the past month or so we've been converting the game to 3D, throwing out most of the old rendering code in the process. More importantly, Dom and I are finally getting our sea legs. We started off being pretty clueless about everything, but we've managed to build up a little foundation of knowledge about how these systems work and how they fit together, and we're hoping to post more articles about all the stuff we've learned.
+[Manchester](https://github.com/jeffanddom/manchester) (the working title for our current project) is still more tech demo than game, but it's come a really long way in the past six months. We've arrived at a multiplayer architecture that seems pretty workable, and for the past month we've been converting the game to 3D, throwing out most of the old rendering code in the process. More importantly, Dom and I are finally getting our sea legs. We started off being pretty clueless about everything, but we've managed to build up a little foundation of knowledge about how these systems work and how they fit together, and we're hoping to post more articles about all the stuff we've learned.
 
 This post explores some of the tools we use to build and develop the game. We're using borrowed 3D models and don't have a complex asset pipeline, so this mostly concerns how we convert TypeScript source into a playable game, and how that fits into our development workflow.
 
-One problem with building Manchester is that it's actually two different programs, a client and a server. The client runs in the browser, the server runs via the Node runtime, and the two talk to each other over a websocket. While each program has some exclusive capabilities (only the client can use WebGL, for example), both can run the full game simulation. As a result, they share a lot of code, but they aren't identical artifacts.
+One interesting problem with building Manchester is that it's actually two different programs, a client and a server. The client runs in the browser, the server runs via the Node runtime, and the two talk to each other over a websocket. While each program has some exclusive capabilities (only the client can use WebGL, for example), both can run the full game simulation. As a result, they share a lot of code, but they aren't identical artifacts.
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1609722621165_Screen+Shot+2021-01-03+at+5.10.13+PM.png)
 
@@ -29,7 +29,7 @@ At the most basic level, our build system converts the game's TypeScript to Java
 
 ## Bundling code as fast as possible
 
-Until very recently, we used [Parcel](https://parceljs.org/) to generate both the client and server bundles. Parcel has pretty sensible default behavior, which reduces the amount of customization you have to do. Its API also largely avoids being a soup of abstractions, so when you do have to customize, it's not that hard. The first time I ever used it, it seemed quite magical in comparison to Webpack.
+Until very recently, we used [Parcel](https://parceljs.org/) to generate both the client and server bundles. Parcel has pretty sensible default behavior, which reduces the amount of customization you have to do. Its API also largely avoids being a soup of abstractions, so when you do have to customize, it's not that hard. The first time I ever used it, it seemed quite magical when compared to the stodgy unfriendliness of Webpack.
 
 To build a client and server versions of the game, we just point Parcel at two different "entrypoint" files, and set a single flag for each indicating whether we're targeting the browser or Node. Parcel then recursively traverses the import statements for each entrypoint and spits out two different bundles, ready for runtime.
 
@@ -37,7 +37,7 @@ Unfortunately, Parcel is pretty slow. I'm skeptical that it was ever as "blazing
 
 Lately, a lot of new JavaScript tools seem to be popping up on the radar, all reflecting a philosophy of chucking the last decade's worth of received wisdom around frontend tooling. You've got [esbuild](https://esbuild.github.io/) and [swc](https://github.com/swc-project/swc), two transpiling bundlers written in Go and Rust respectively, that both abandon the age-old tradition of implementing JavaScript tooling in JavaScript itself. Then there's [Rome](https://rome.tools/), which doesn't ditch JavaScript as an implementation language, but appears to ditch just about everything else in the conventional JS toolchain.
 
-Despite the grand promises of these new tools, I'd always avoided trying to replace Parcel--it seemed like it would be painful to change such a core piece of the build, especially if the replacements weren't fully baked. But while researching this post, I set aside a little time to give esbuild a shot. Just a tiny toe-dip to see what the water felt like, I thought.
+Despite the grand promises of these new tools, I'd always avoided trying to replace Parcel--it seemed like it would be painful to change such a core piece of the build, especially if the alternatives weren't fully baked. But while researching this post, I set aside a little time to give esbuild a shot. Just a tiny toe-dip to see what the water felt like.
 
 The results were _staggering_. In less than an hour, I [merged a change](https://github.com/jeffanddom/manchester/commit/97d2b86b9b8158845236267efcca2d2c0c8cfcbc) that replaced Parcel with esbuild, yielding build times that feel pretty darn close to the [two-order-magnitude speedup](https://esbuild.github.io/faq/#why-is-esbuild-fast) advertised on esbuild's website. I didn't do any profiling except to observe that the build is now essentially instantaneous. It makes me feel like the community should strongly consider not using JavaScript anymore for writing nontrivial tools. Yes, I'm looking at you, official TypeScript typechecker!
 
@@ -103,7 +103,7 @@ The script has accreted a bunch of automatic behaviors to make it more usable:
 - The script auto-mounts EBS volumes--Dom and I each have one, and the script figures out which one to mount based on our respective AWS credentials. It's okay if remote hosts come and go, but it helps for the storage to be persistent, so you don't have to clone the source repo every time, and you don't have to worry about losing work if you forget to commit and push.
 - Starting new EC2 instances guarantees you'll get a different hostname every time, so the script updates your local SSH configuration with a host alias that's stable from session to session. This saves you from having to copy and paste hostnames.
 - In a similar vein, the script forwards traffic from a local TCP port to the remote game server, so you can play the game by opening a localhost URL.
-- Using `git fetch` and `git push` through the remote session means your SSH identity needs to be available remotely, so the script also automatically updates the local SSH config to enable agent forwarding.
+- Using `git fetch` and `git push` through the remote session means your SSH identity needs to be available remotely, so the script also automatically updates the local SSH config to enable [agent forwarding](http://unixwiz.net/techtips/ssh-agent-forwarding.html).
 - Yet more SSH shenanigans: to prevent the inevitable SSH "Do you trust these new host keys?" prompt, the script automatically updates the local `known_hosts` file with the remote host's public keys. I believe this is safe practice, or at least no more dangerous than the non-automated alternative, given that a) the host just got created, and b) I've never had the insight or wherewithal to respond to that prompt with anything other than an immediate `yes`.
 - As a bonus convenience, the script also uploads your `.gitconfig`, so commits created from the remote host get attributed to you. We got tired of seeing commits in git history authored by someone called "Ubuntu".
 
@@ -113,6 +113,8 @@ As far as costs are concerned, it's been pretty darn affordable so far, with the
 
 ## So how's that been working out for you, buddy?
 
-All in all, these tools have been serving us pretty nicely! We get fairly immediate feedback on changes to source, which is hopefully something we can sustain over the lifetime of the project. We'll occasionally observe some flaky builds where it's hard to tell whether there's an actual bug or something went sideways with the bundle. Those kinds of things are most likely due to race conditions, which are hopefully less likely now that esbuild has improved build times so much. It remains to be seen whether our cloud development tool is something we'll start to rely on outside of our Twitch streams. But the developer experience is already smooth enough to be usable, and it does help to take load off of our laptops.
+All in all, these tools have been serving us pretty nicely! We get fairly immediate feedback on changes to source, which is hopefully something we can sustain over the lifetime of the project. We'll occasionally observe some flaky builds where it's hard to tell whether there's an actual bug or something went sideways with the bundle. Those kinds of things are most likely due to race conditions, which are hopefully less likely now that esbuild has improved build times so much.
+
+It remains to be seen whether our cloud development tool is something we'll start to rely on outside of our Twitch streams. But the developer experience is already smooth enough to be usable, and it does help to take load off of our laptops.
 
 From here on out, our tooling effort is likely to shift away from bundling code and toward processing and editing assets. In particular, neither our level editor nor particle emitter tool has survived the transition to 3D, and those seem like pretty important things to fix!
