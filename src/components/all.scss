@@ -1,7 +1,7 @@
-$green: rgb(113, 228, 19);
+$green: #8be339;
 $magenta: 'magenta';
-$black: #000;
-$body-color: #ccc;
+$black: #0E182A;
+$body-color: #e1e1e1;
 
 $game-font: 'Press Start 2P', monospace;
 $text-font: 'Lato', sans-serif;
@@ -81,7 +81,7 @@ img {
 }
 
 footer {
-  background: #333;
+  border-top: 1px solid transparentize($color: $body-color, $amount: 0.75);
   margin-top: 40px;
   padding: 40px 0;
 
@@ -99,7 +99,7 @@ footer {
       margin-right: 20px;
     }
   }
-  
+
   .social {
     padding-right: 30px;
     margin-bottom: 30px;
@@ -107,8 +107,8 @@ footer {
   .social-icons {
     cursor: pointer;
     font-size: 24px;
-    a { 
-      padding-right: 8px; 
+    a {
+      padding-right: 8px;
       color: white;
       &:hover {
         color: $green;
@@ -121,7 +121,7 @@ footer {
 nav .container {
   margin-top: 30px;
   font-family: $game-font;
-  
+
   @include desktop {
     display: flex;
     justify-content: space-between;
@@ -135,7 +135,7 @@ nav .container {
     @include desktop {
       padding: 20px 0 10px;
     }
-    
+
 
     &:hover {
       text-decoration: underline;
@@ -153,7 +153,7 @@ nav .container {
   header {
     text-align: center;
     padding-top: 20px;
-  
+
     img {
       max-width: 100%;
     }
@@ -184,7 +184,7 @@ nav .container {
   border: $border;
   padding: $border-padding;
   margin-bottom: $border-padding;
-  
+
   .offline-label {
     @include mobile {
       display: block;
@@ -218,7 +218,7 @@ nav .container {
   .thumbnail {
     flex-shrink: 0;
     margin-right: 30px;
-  }  
+  }
 
   .post-title {
     h1, h3 {
@@ -227,7 +227,7 @@ nav .container {
   }
 
   .post-date {
-    color: #666;
+    color: #999;
   }
 }
 
@@ -285,9 +285,9 @@ nav .container {
     display: flex;
     width: 100%;
     flex-direction: column;
-    background: #222;
+    background: darken($black, 3%);
     &:hover {
-      background: #333;
+      background: lighten($black, 5%);
       text-decoration: none;
     }
   }
@@ -307,9 +307,9 @@ nav .container {
     justify-content: space-between;
     padding: 10px;
 
-    h3 { 
-      margin: 0; 
-      font-size: 14px; 
+    h3 {
+      margin: 0;
+      font-size: 14px;
       padding-bottom: 10px;
     }
 
