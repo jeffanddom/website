@@ -5,13 +5,13 @@ import { HTMLContent } from './Content'
 
 class DevlogList extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, limit } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div>
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.slice(0, limit || posts.length).map(({ node: post }) => (
             <article key={post.id} className='preview-list-item'>
               <div className='post-title'>
                 <h3>
@@ -47,7 +47,7 @@ DevlogList.propTypes = {
   }),
 }
 
-export default () => (
+export default ({ limit }) => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
@@ -74,6 +74,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <DevlogList data={data} count={count} />}
+    render={(data, count) => <DevlogList data={data} limit={limit} count={count} />}
   />
 )

@@ -60,8 +60,8 @@ export const IndexPageTemplate = ({
 
       <p>See the <a href='/broadcasts'>full archive</a>.</p>
 
-      <h3 className="devlog-header">Devlog</h3>
-      <DevlogList />
+      <h3 className="devlog-header">Latest Devlog</h3>
+      <DevlogList limit={1} />
     </div>
   </div>
 }
