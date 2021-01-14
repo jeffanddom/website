@@ -20,15 +20,15 @@ export const BroadcastTemplate = ({
     <>
       {helmet || ''}
       <div className="broadcast broadcast-full container">
-        <p className="post-title">
+        <div className="post-title">
           Session {counter}<br />
           <h1>
             {title}
           </h1>
-        </p>
+        </div>
 
         <div className="youtube-wrapper">
-          <iframe title={title} className="youtube-embed" src={`https://www.youtube.com/embed/${videoId}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title={title} className="youtube-embed" src={`https://www.youtube.com/embed/${videoId}`} frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
 
         <p>
