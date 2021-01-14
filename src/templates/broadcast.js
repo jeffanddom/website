@@ -60,8 +60,13 @@ const Broadcast = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         helmet={
-          <Helmet titleTemplate="%s | Devlog">
-            <title>{`${post.frontmatter.title}`}</title>
+          <Helmet titleTemplate="%s | Jeff and Dom Make a Game">
+            <title>{post.frontmatter.counter}: {post.frontmatter.title}</title>
+            <meta property="og:title" content={`Session ${post.frontmatter.counter}: ${post.frontmatter.title}`} />
+            <meta property="og:description" content={post.excerpt} />
+            <meta property="og:image" content={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:image" content={`https://img.youtube.com/vi/${post.frontmatter.videoId}/maxresdefault.jpg`} />
           </Helmet>
         }
         date={post.frontmatter.date}
@@ -69,7 +74,7 @@ const Broadcast = ({ data }) => {
         counter={post.frontmatter.counter}
         videoId={post.frontmatter.videoId}
       />
-    </Layout>
+    </Layout >
   )
 }
 
@@ -86,6 +91,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      excerpt(pruneLength: 100)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
