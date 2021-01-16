@@ -23,7 +23,7 @@
     <div class='broadcast-square-wrapper'>
       {{ range first 3 (.Site.GetPage "/broadcasts/").Pages }}
       <article class="broadcast-square">
-        <a href={{.Permalink}}>
+        <a href={{.RelPermalink}}>
           <div class='thumbnail' style="background-image:
             url(https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg)"></div>
           <div class='content'>
@@ -50,7 +50,7 @@
       <article class='preview-list-item'>
         <div class='post-title'>
           <h3>
-            <a href="{{.Permalink}}">{{.Title}}</a>
+            <a href="{{.RelPermalink}}">{{.Title}}</a>
           </h3>
           <p>
             <span class=" post-date">
@@ -59,7 +59,7 @@
           </p>
           <div>
             <div>{{.Summary}}</div>
-            <a class="button" href="{{.Permalink}}">Keep Reading →</a>
+            <a class="button" href="{{.RelPermalink}}">Keep Reading →</a>
           </div>
         </div>
       </article>

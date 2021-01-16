@@ -15,7 +15,7 @@
         <div class="post-title">
           Session {{.Params.counter}}<br />
           <h3>
-            <a href="{{.Permalink}}">
+            <a href="{{.RelPermalink}}">
               {{.Title}}
             </a>
           </h3>
@@ -31,7 +31,7 @@
           {{.Summary}}
           <br />
           <br />
-          <a class="button" to="{{.Permalink}}">
+          <a class="button" to="{{.RelPermalink}}">
             See more →
           </a>
         </p>
