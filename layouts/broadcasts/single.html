@@ -30,9 +30,12 @@
   Previous: <a class="previous" href="{{.RelPermalink}}">{{.Title}}</a>
   {{ end }}
 
+  {{ if (and .PrevInSection .NextInSection) }}
+  |
+  {{ end }}
+
   {{ with .NextInSection }}
-  <!-- TODO: remove leading | for first posts -->
-  | Next: <a class="next" href="{{.RelPermalink}}">{{.Title}}</a>
+  Next: <a class="next" href="{{.RelPermalink}}">{{.Title}}</a>
   {{ end }}
 </aside>
 {{ end }}
