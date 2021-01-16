@@ -1,26 +1,27 @@
 {{ define "main" }}
-<section id="main">
-  <h1 id="title">{{ .Title }}</h1>
-  <h4 id="date">{{ .Date.Format "January 2, 2006" }}</h4>
+<main id="main">
+  <header>
+    <h1 id="title">{{ .Title }}</h1>
+    <h4 id="date">{{ .Date.Format "January 2, 2006" }}</h4>
+  </header>
 
-  <div>
-    <article id="content">
-      {{ .Content }}
-    </article>
-  </div>
-</section>
+  <article id="content">
+    {{ .Content }}
+  </article>
+</main>
 
-<h4>Tags</h4>
-{{ with .Params.tags }}
-<ul id="tags">
-  {{ range . }}
-  <li><a href="{{ " tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+<aside>
+  <h4>Tags</h4>
+  {{ with .Params.tags }}
+  <ul id="tags">
+    {{ range . }}
+    <li><a href='{{ "tags/" | absURL }}{{ . | urlize }}'>{{ . }}</a></li>
+    {{ end }}
+  </ul>
   {{ end }}
-</ul>
-{{ end }}
+</aside>
 
-<aside id="meta">
-  <div>
+<aside>
     {{ with .PrevInSection }}
     Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
     {{ end }}
@@ -28,6 +29,5 @@
     <!-- TODO: remove leading | for first posts -->
     | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
     {{ end }}
-  </div>
 </aside>
 {{ end }}

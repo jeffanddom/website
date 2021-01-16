@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main aria-role="main" id="index">
+<main id="index">
 
   <header>
     <img alt='Jeff and Dom Make a Game' src='/img/home.png' />
@@ -9,7 +9,14 @@
     <p>We’re two programmers trying to make a game from scratch, and learning as we go. Follow our progress as we
       explore game design, engine development, netplay and more.</p>
 
+    <!-- twitch -->
     <div id='twitch-embed'></div>
+
+    {{ $defines := dict "process.env.NODE_ENV" `"production"` }}
+    {{ $opts := dict "targetPath" "twitchStatus.js" "defines" $defines }}
+    {{ $built := resources.Get "js/twitchStatus.jsx" | js.Build $opts }}
+    <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
+    <!-- /twitch -->
 
     <h3>Recent Broadcasts</h3>
 
@@ -17,7 +24,6 @@
       {{ range first 3 (.Site.GetPage "/broadcasts/").Pages }}
       <article class="broadcast-square">
         <a href={{.Permalink}}>
-
           <div class='thumbnail' style="background-image:
             url(https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg)"></div>
           <div class='content'>
@@ -31,7 +37,6 @@
             </div>
           </div>
         </a>
-
       </article>
       {{ end }}
     </div>
@@ -56,17 +61,11 @@
             <div>{{.Summary}}</div>
             <a class="button" href="{{.Permalink}}">Keep Reading →</a>
           </div>
-
         </div>
       </article>
       {{ end }}
     </div>
   </div>
-
-  {{ $defines := dict "process.env.NODE_ENV" `"production"` }}
-  {{ $opts := dict "targetPath" "twitchStatus.js" "defines" $defines }}
-  {{ $built := resources.Get "js/twitchStatus.jsx" | js.Build $opts }}
-  <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
 
 </main>
 {{ end }}

@@ -1,12 +1,12 @@
 {{ define "main" }}
-<div class="broadcast broadcast-full container">
-  <p class="post-title">
+<main class="broadcast broadcast-full">
+  <header class="post-title">
     Session {{.Params.counter}}
     <br />
-  <h1>
-    {{.Title}}
-  </h1>
-  </p>
+    <h1>
+      {{.Title}}
+    </h1>
+  </header>
 
   <div class="youtube-wrapper">
     <iframe title={{.Title}} class="youtube-embed" src="https://www.youtube.com/embed/{{.Params.videoId}}"
@@ -20,25 +20,19 @@
     </span>
   </p>
 
-  <div>
-    <article id="content">
-      {{ .Content }}
-    </article>
-  </div>
+  <article id="content">
+    {{ .Content }}
+  </article>
+</main>
 
-  <aside id="meta">
-    <div>
+<aside>
+  {{ with .PrevInSection }}
+  Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
+  {{ end }}
 
-      {{ with .PrevInSection }}
-      Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
-      {{ end }}
-
-      {{ with .NextInSection }}
-      <!-- TODO: remove leading | for first posts -->
-      | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
-      {{ end }}
-    </div>
-  </aside>
-</div>
-
+  {{ with .NextInSection }}
+  <!-- TODO: remove leading | for first posts -->
+  | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
+  {{ end }}
+</aside>
 {{ end }}

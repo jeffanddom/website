@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main aria-role="main">
+<main>
 
   <header>
     <h1>Past broadcasts</h1>
@@ -7,7 +7,7 @@
 
   <div>
     {{ range .Pages }}
-    <article class="broadcast broadcast-preview preview-list-item">
+    <article class="broadcast preview-list-item">
       <div class="thumbnail">
         <img alt='' src="https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg" />
       </div>
@@ -36,9 +36,7 @@
           </a>
         </p>
       </div>
-
     </article>
-
     {{ end }}
   </div>
 
