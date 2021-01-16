@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
-{{- partial "head.html" . -}}
+
+<head>
+    {{- partial "head.html" . -}}
+    {{- block "custom-head" . }}{{- end }}
+</head>
 
 <body>
     <div class="container">

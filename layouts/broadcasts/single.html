@@ -1,3 +1,11 @@
+{{ define "custom-head" }}
+<meta property="og:title" content='Session {{.Params.counter}}: {{.Title}}' />
+<meta property="og:description" content='{{.Summary}}' />
+<meta property="og:image" content='https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg' />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content='https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg' />
+{{ end }}
+
 {{ define "main" }}
 <main class="broadcast broadcast-full">
   <header class="post-title">
