@@ -1,0 +1,48 @@
+{{ define "main" }}
+<main aria-role="main" id="index">
+
+  <header>
+    <img alt='Jeff and Dom Make a Game' src='/img/home.png' />
+  </header>
+
+  <div>
+    <p>We’re two programmers trying to make a game from scratch, and learning as we go. Follow our progress as we
+      explore game design, engine development, netplay and more.</p>
+
+    <div class="twitch-online">
+      <h4>Jeff and Dom are
+        <span class='live-label'>LIVE</span>
+      </h4>
+
+      <!--
+      {twitchEmbed &&
+      <TwitchPlayer channel='jeffanddom' onOffline={setOffline} onOnline={setOnline} />}
+      -->
+    </div>
+
+    <div class="twitch-offline">
+      <h4>
+        Jeff and Dom are <span class='offline-label'>OFFLINE</span>
+      </h4>
+
+      <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</span>
+
+      <ul>
+        <li>Mondays at <span>7pm</span></li>
+        <li>Thursdays at <span>7pm</span></li>
+      </ul>
+
+      <span>All times Pacific.</span>
+    </div>
+
+    <h3>Recent Broadcasts</h3>
+    <BroadcastSquares />
+
+    <p>See the <a href='/broadcasts'>full archive</a>.</p>
+
+    <h3 class="devlog-header">Latest Devlog</h3>
+    <DevlogList limit={1} />
+  </div>
+
+</main>
+{{ end }}
