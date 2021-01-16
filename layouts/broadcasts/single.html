@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="broadcast broadcast-full container">
+  <p class="post-title">
+    Session {{.Params.counter}}
+    <br />
+  <h1>
+    {{.Title}}
+  </h1>
+  </p>
+
+  <div class="youtube-wrapper">
+    <iframe title={{.Title}} class="youtube-embed" src="https://www.youtube.com/embed/{{.Params.videoId}}"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+
+  <p>
+    <span class="post-date">
+      {{.Date.Format "January 2, 2006"}}
+    </span>
+  </p>
+
+  <div>
+    <article id="content">
+      {{ .Content }}
+    </article>
+  </div>
+
+  <aside id="meta">
+    <div>
+
+      {{ with .PrevInSection }}
+      Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
+      {{ end }}
+
+      {{ with .NextInSection }}
+      <!-- TODO: remove leading | for first posts -->
+      | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
+      {{ end }}
+    </div>
+  </aside>
+</div>
+
+{{ end }}
