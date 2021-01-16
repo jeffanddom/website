@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main id='find-us'>
+  <header>
+    <h1>We're everywhere</h1>
+  </header>
+
+  <p>Say hello on your favorite platform, and follow us for the latest updates!</p>
+
+  <ul class="social">
+    <li>
+      <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank" rel="noreferrer">
+        {{ partial "social-icon.html" "twitch" }} Twitch
+      </a>
+    </li>
+    <li>
+      <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank" rel="noreferrer">
+        {{ partial "social-icon.html" "twitter" }}@jeffanddom
+      </a>
+    </li>
+    <li>
+      <a title="github" href="https://github.com/jeffanddom" target="_blank" rel="noreferrer">
+        {{ partial "social-icon.html" "github" }}jeffanddom
+      </a>
+    </li>
+    <li>
+      <a title="youtube" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank"
+        rel="noreferrer">
+        {{ partial "social-icon.html" "youtube" }} YouTube
+      </a>
+    </li>
+  </ul>
+</main>
+{{ end }}

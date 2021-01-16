@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main>
+
+  <header>
+    <h1>Past broadcasts</h1>
+  </header>
+
+  <div>
+    {{ range .Pages }}
+    <article class="broadcast preview-list-item">
+      <div class="thumbnail">
+        <img alt='' src="https://img.youtube.com/vi/{{.Params.videoId}}/maxresdefault.jpg" />
+      </div>
+      <div>
+        <div class="post-title">
+          Session {{.Params.counter}}<br />
+          <h3>
+            <a href="{{.RelPermalink}}">
+              {{.Title}}
+            </a>
+          </h3>
+        </div>
+
+        <p>
+          <span class="post-date">
+            {{.Date.Format "January 2, 2006"}}
+          </span>
+        </p>
+
+        <p>
+          {{.Summary}}
+          <br />
+          <br />
+          <a class="button" to="{{.RelPermalink}}">
+            See more →
+          </a>
+        </p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+</main>
+{{ end }}
