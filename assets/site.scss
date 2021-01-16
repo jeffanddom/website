@@ -108,10 +108,19 @@ footer {
     font-size: 24px;
     a {
       padding-right: 8px;
+
+    }
+
+    svg {
+      height: 1em;
+      width: 1em;
+      stroke: currentColor;
+      fill: currentColor;
+
       color: white;
       &:hover {
         color: $green;
-      }
+      }      
     }
   }
 }
