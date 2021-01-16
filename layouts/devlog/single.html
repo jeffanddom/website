@@ -10,6 +10,7 @@
   </article>
 </main>
 
+<!-- TODO
 <aside>
   <h4>Tags</h4>
   {{ with .Params.tags }}
@@ -20,14 +21,15 @@
   </ul>
   {{ end }}
 </aside>
+-->
 
 <aside>
-    {{ with .PrevInSection }}
-    Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-    <!-- TODO: remove leading | for first posts -->
-    | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
-    {{ end }}
+  {{ with .PrevInSection }}
+  Previous: <a class="previous" href="{{.Permalink}}">{{.Title}}</a>
+  {{ end }}
+  {{ with .NextInSection }}
+  <!-- TODO: remove leading | for first posts -->
+  | Next: <a class="next" href="{{.Permalink}}">{{.Title}}</a>
+  {{ end }}
 </aside>
 {{ end }}
