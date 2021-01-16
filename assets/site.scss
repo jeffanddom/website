@@ -169,7 +169,7 @@ nav {
 }
 
 // Twitch player
-.twitch-online, .twitch-offline {
+#twitch-online, #twitch-offline {
   display: none;
 
   h4 {
@@ -181,7 +181,7 @@ nav {
   }
 }
 
-.twitch-offline {
+#twitch-offline {
   margin-top: $border-padding;
   border: $border;
   padding: $border-padding;
