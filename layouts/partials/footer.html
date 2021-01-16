@@ -6,17 +6,17 @@
 
     <div class="social-icons">
       <a title="twitch" href="https://www.twitch.tv/jeffanddom" target="_blank" rel="noreferrer">
-        {{ readFile "static/img/brand-icons/twitch.svg" | safeHTML }}
+        {{ partial "social-icon.html" "twitch" }}
       </a>
       <a title="twitter" href="https://twitter.com/jeffanddom" target="_blank" rel="noreferrer">
-        {{ readFile "static/img/brand-icons/twitter.svg"| safeHTML }}
+        {{ partial "social-icon.html" "twitter" }}
       </a>
       <a title="github" href="https://github.com/jeffanddom" target="_blank" rel="noreferrer">
-        {{ readFile "static/img/brand-icons/github.svg"| safeHTML }}
+        {{ partial "social-icon.html" "github" }}
       </a>
-      <a title="github" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank"
+      <a title="youtube" href="https://www.youtube.com/channel/UCPMLP_iuTLQWxCVYFNt40WA" target="_blank"
         rel="noreferrer">
-        {{ readFile "static/img/brand-icons/youtube.svg"| safeHTML }}
+        {{ partial "social-icon.html" "youtube" }}
       </a>
     </div>
   </div>

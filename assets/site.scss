@@ -112,11 +112,6 @@ footer {
     }
 
     svg {
-      height: 1em;
-      width: 1em;
-      stroke: currentColor;
-      fill: currentColor;
-
       color: white;
       &:hover {
         color: $green;
@@ -357,5 +352,14 @@ nav {
       }
       margin-bottom: 16px;
     }
+  }
+}
+
+.inline-svg {
+  svg {
+    height: 1em;
+    width: 1em;
+    stroke: currentColor;
+    fill: currentColor;    
   }
 }
