@@ -22,7 +22,7 @@ Holy heck, it's January! Congrats to everyone for making it to 2021.
 
 This post explores some of the tools we use to build and develop the game. We're using borrowed 3D models and don't have a complex asset pipeline, so this mostly concerns how we convert TypeScript source into a playable game, and how that fits into our development workflow.
 
-One interesting problem with building Manchester is that it's actually two different programs, a client and a server. The client runs in the browser, the server runs via the Node runtime, and the two talk to each other over a websocket. While each program has some exclusive capabilities (only the client can use WebGL, for example), both can run the full game simulation. As a result, they share a lot of code, but they aren't identical artifacts.
+One interesting problem with building Manchester is that it's actually two different programs, a client and a server. The client runs in the browser, the server runs via the Node runtime, and the two talk to each other over a websocket. While each program has some exclusive capabilities (only the client can use WebGL, for example), both can run the full game simulation. As a result, they're not identical artifacts, but they share a lot of code.
 
 ![](https://paper-attachments.dropbox.com/s_2D26CFCFC1A50FAAA131CE2FDABB0884BD80263FA1E7E2924E10BB4715669F45_1609722621165_Screen+Shot+2021-01-03+at+5.10.13+PM.png)
 

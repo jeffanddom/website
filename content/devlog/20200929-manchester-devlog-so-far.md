@@ -16,9 +16,9 @@ Hey there, friend! Welcome to the Jeff and Dom Make a Game (heretofore JADMAG) d
 
 <!--more-->
 
-The funny thing about maintaining a devlog for this project is that most devlogs are meant giving the audience a peek into the development process that they otherwise might not get to experience. Nearly 40 stream sessions in, it’s clear that JADMAG has been about nothing if not the process itself, warts and all. Scrub over to any moment in our archive, and you’ll find us banging our foreheads against some granular detail, usually a programming bug, but maybe also a trivial decision like deciding what color to use for the circles that pass as the game’s trees. If we had any goal at all when we started the stream, it was to demystify the process of making a game, certainly for ourselves, but mostly for other folks.
+The funny thing about maintaining a devlog for this project is that most devlogs are meant to give the audience a peek into the development process that they otherwise might not get to experience. Nearly 40 stream sessions in, it’s clear that JADMAG has been about nothing if not the process itself, warts and all. Scrub over to any moment in our archive, and you’ll find us banging our foreheads against some granular detail, usually a programming bug, but maybe also a trivial decision like deciding what color to use for the circles that pass as the game’s trees. If we had any goal at all when we started the stream, it was to demystify the process of making a game, certainly for ourselves, but mostly for other folks.
 
-So, with a growing video archive that is stuffed to the gills with development minutiae, this devlog will likely be a space for us to step back and do some reflection, and compress the myriad design conversations, bugfixes, and digressions from the stream into something that’s a little more digestible
+So, with a growing video archive that is stuffed to the gills with development minutiae, this devlog will likely be a space for us to step back and do some reflection, and compress the myriad design conversations, bugfixes, and digressions from the stream into something that’s a little more digestible.
 
 For our first entry, let’s talk a bit about where this project has been, and where it’s going.
 
@@ -40,11 +40,11 @@ Bolo was a multiplayer Mac game from the late 80s. Playing it on a modern comput
 
 What made it compelling was a building-and-gathering mechanic that added a surprising amount of tactical complexity. You could build a handful of objects like boats, walls, and pillboxes, and employ them toward the primary goal of shooting at other tanks. This appealed to our nostalgia for real-time strategy games like Starcraft. It felt like you win in multiple ways: you could be really good at steering the tank, or you could be good at hiding in the trees while surrounding your enemy’s base with mines.
 
-We decided that Bolo was an excellent model on which to base a new game. From game design perspective, we traded the guesswork of tuning Breakout physics for implementing much simpler mechanics that could be combined in unexpected ways: shooting, hiding, building, and resource-gathering. It also seemed like a more complex and interesting production, requiring level design tools, systems for wrangling the interaction between many different kinds of objects, and not least, a robust multiplayer implementation.
+We decided that Bolo was an excellent model on which to base a new game. From a game design perspective, we traded the guesswork of tuning Breakout physics for implementing much simpler mechanics that could be combined in unexpected ways: shooting, hiding, building, and resource-gathering. It also seemed like a more complex and interesting production, requiring level design tools, systems for wrangling the interaction between many different kinds of objects, and not least, a robust multiplayer implementation.
 
-We decided to call it “YoloRTS”. This was a bad pun that we rode for several dozen streams, until we gave it a new codename: Manchester. There were several reasons we chose this name that, when added together, still fall short of an interesting justification for the name. Suffice it say we just thought it sounded cool.
+We decided to call it “YoloRTS”. This was a bad pun that we rode for several dozen streams, until we gave it a new codename: Manchester. There were several reasons we chose this name that, when added together, still fall short of an interesting justification for the name. Suffice it to say we just thought it sounded cool.
 
-So far, we’ve implemented a ton of stuff for Manchester, and most if it during our twice-weekly two-hour streams. Here are some of the highlights:
+So far, we’ve implemented a ton of stuff for Manchester, and most of it during our twice-weekly two-hour streams. Here are some of the highlights:
 
 - Mouse-and-keyboard driving/shooting mechanics that are basic but fun, for a couple minutes anyway.
 - AI-driven turrets that can kill the player.
