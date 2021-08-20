@@ -37,8 +37,8 @@ function TwitchStatus() {
         <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</span>
 
         <ul>
-          <li>Mondays at <span>7pm</span></li>
-          <li>Thursdays at <span>7pm</span></li>
+          <li>Mondays at <span>6:30pm PT/9:30 ET</span></li>
+          <li>Thursdays at <span>6:30pm PT/9:30 ET</span></li>
         </ul>
 
         <span>All times Pacific.</span>
