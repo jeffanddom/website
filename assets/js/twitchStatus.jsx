@@ -34,14 +34,7 @@ function TwitchStatus() {
           Jeff and Dom are <span className='offline-label'>OFFLINE</span>
         </h4>
 
-        <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on:</span>
-
-        <ul>
-          <li>Mondays at <span>6:30pm PT/9:30 ET</span></li>
-          <li>Thursdays at <span>6:30pm PT/9:30 ET</span></li>
-        </ul>
-
-        <span>All times Pacific.</span>
+        <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on Wednesdays at 5pm PT/8pm ET.</span>
       </div>
     </div>
   )
