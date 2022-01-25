@@ -14,7 +14,7 @@ function TwitchStatus() {
         </h4>
 
         <TwitchPlayer
-          channel='jeffanddom'
+          channel='maingauchelive'
           onOnline={() => {
             setOnlineClass("visible")
             setOfflineClass("")
@@ -34,7 +34,7 @@ function TwitchStatus() {
           Jeff and Dom are <span className='offline-label'>OFFLINE</span>
         </h4>
 
-        <span>Watch our <a href='https://www.twitch.tv/jeffanddom'>Twitch stream</a> on Wednesdays at 5pm PT/8pm ET.</span>
+        <span>Watch our <a href='https://www.twitch.tv/maingauchelive'>Twitch stream</a> on Fridays at 1pm PT/4pm ET.</span>
       </div>
     </div>
   )
